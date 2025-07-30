@@ -1,0 +1,11 @@
+title = "Mapping Configuration"
+
+[mapping]
+limit_distance = 5 # [meters]
+
+[mapping.device]
+name = "Front Camera"
+manufacturer = "Stereolabs"
+model = "ZED X"
+serial_number = "1234567890"
+connection_type = "GSML"
