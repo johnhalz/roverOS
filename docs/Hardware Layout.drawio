@@ -1,0 +1,173 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram name="Page-1" id="zMK9IlbHdBOjEL7lLGIe">
+    <mxGraphModel dx="1250" dy="929" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-36" value="Wifi" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="720" y="350" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-1" target="Q3_v-uyDUmJEaCX7jl3u-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-1" target="Q3_v-uyDUmJEaCX7jl3u-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-1" target="Q3_v-uyDUmJEaCX7jl3u-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-1" target="Q3_v-uyDUmJEaCX7jl3u-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-1" target="Q3_v-uyDUmJEaCX7jl3u-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-1" target="Q3_v-uyDUmJEaCX7jl3u-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-25" value="CAN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Q3_v-uyDUmJEaCX7jl3u-18" vertex="1" connectable="0">
+          <mxGeometry x="-0.8545" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-1" value="Motor µController&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(driving, height control, balancing)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="290" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-2" value="Motor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="190" y="70" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-3" value="Motor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="190" y="160" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-4" value="Motor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="190" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-5" value="Motor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="190" y="340" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-6" value="Motor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="190" y="430" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-7" value="Motor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="190" y="520" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-14" target="Q3_v-uyDUmJEaCX7jl3u-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-16" value="Serial" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Q3_v-uyDUmJEaCX7jl3u-15" vertex="1" connectable="0">
+          <mxGeometry x="0.2646" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-14" value="IMU" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="385" y="200" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-17" target="Q3_v-uyDUmJEaCX7jl3u-48" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-50" value="USB" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Q3_v-uyDUmJEaCX7jl3u-49" vertex="1" connectable="0">
+          <mxGeometry x="-0.3988" relative="1" as="geometry">
+            <mxPoint y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-17" value="Onboard Computer&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(core software stack, decision-making, receiving input from RC, update manager)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="750" y="290" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-21" value="RC µController&lt;div&gt;(Robot Side)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(wireless communication, sending video frames to RC)&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="155" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-24" value="" style="points=[[0.005,0.09,0],[0.08,0,0],[0.76,0.25,0],[1,0.92,0],[0.91,0.995,0],[0.57,0.995,0],[0.045,0.955,0],[0.005,0.43,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.3g_4g_indicator;fillColor=#005073;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="706" y="129" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-26" target="Q3_v-uyDUmJEaCX7jl3u-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-31" value="Ethernet" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Q3_v-uyDUmJEaCX7jl3u-28" vertex="1" connectable="0">
+          <mxGeometry x="0.3161" y="2" relative="1" as="geometry">
+            <mxPoint y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-26" target="Q3_v-uyDUmJEaCX7jl3u-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-32" value="Ethernet" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Q3_v-uyDUmJEaCX7jl3u-29" vertex="1" connectable="0">
+          <mxGeometry x="0.2372" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-26" target="Q3_v-uyDUmJEaCX7jl3u-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-33" value="Ethernet" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Q3_v-uyDUmJEaCX7jl3u-30" vertex="1" connectable="0">
+          <mxGeometry x="0.3594" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-26" target="Q3_v-uyDUmJEaCX7jl3u-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-26" value="Ethernet switch" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="390" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-27" value="Local Network Router&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(incl. passthrough Wifi)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="450" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-34" value="" style="points=[[0.005,0.09,0],[0.08,0,0],[0.76,0.25,0],[1,0.92,0],[0.91,0.995,0],[0.57,0.995,0],[0.045,0.955,0],[0.005,0.43,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.3g_4g_indicator;fillColor=#005073;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="696" y="364" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-35" value="2.4 / 5.8 GHz" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="736" y="125" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-38" value="ETH Jack" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="410" y="480" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-42" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="930" y="315" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-41" value="" style="triangle;whiteSpace=wrap;html=1;flipH=1;" parent="Q3_v-uyDUmJEaCX7jl3u-42" vertex="1">
+          <mxGeometry x="90" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-40" value="Perception&lt;div&gt;Camera(s)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="Q3_v-uyDUmJEaCX7jl3u-42" vertex="1">
+          <mxGeometry width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-40" target="Q3_v-uyDUmJEaCX7jl3u-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-45" value="Serial" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Q3_v-uyDUmJEaCX7jl3u-43" vertex="1" connectable="0">
+          <mxGeometry x="0.0309" y="-1" relative="1" as="geometry">
+            <mxPoint x="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-46" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="930" y="220" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-47" value="" style="triangle;whiteSpace=wrap;html=1;flipH=1;" parent="Q3_v-uyDUmJEaCX7jl3u-46" vertex="1">
+          <mxGeometry x="90" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-48" value="Capture&lt;div&gt;Camera(s)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="Q3_v-uyDUmJEaCX7jl3u-46" vertex="1">
+          <mxGeometry width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-51" value="RC µController&lt;div&gt;(Controller Side)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(wireless communication, sending commands to robot)&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="690" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-52" value="" style="points=[[0.005,0.09,0],[0.08,0,0],[0.76,0.25,0],[1,0.92,0],[0.91,0.995,0],[0.57,0.995,0],[0.045,0.955,0],[0.005,0.43,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.3g_4g_indicator;fillColor=#005073;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="706" y="664" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-53" value="2.4 / 5.8 GHz" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="736" y="660" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="Q3_v-uyDUmJEaCX7jl3u-54" target="Q3_v-uyDUmJEaCX7jl3u-51" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-56" value="USB" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Q3_v-uyDUmJEaCX7jl3u-55" vertex="1" connectable="0">
+          <mxGeometry x="-0.2322" y="-1" relative="1" as="geometry">
+            <mxPoint x="7" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q3_v-uyDUmJEaCX7jl3u-54" value="RC Computer&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(Linux, macOS, UI to interface with robot)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="690" width="160" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
