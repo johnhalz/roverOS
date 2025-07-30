@@ -1,0 +1,146 @@
+name = "Stereolabs ZED X"
+manufacturer = "Stereolabs"
+model = "ZED X"
+serial_number = "1234567890"
+
+[physical_properties]
+width = 164                     # [mm]
+height = 32                     # [mm]
+depth = 37                      # [mm]
+stereo_baseline = 0.12          # [m]
+weight = 0.24                   # [kg]
+min_operating_temperature = -20 # [Celsius]
+max_operating_temperature = 55  # [Celsius]
+
+[physical_properties.lenses]
+[physical_properties.lenses.2_2mm]
+aperture = 2.2                 # [mm]
+focal_length = 2.2             # [mm]
+horizontal_field_of_view = 110 # [degrees]
+vertical_field_of_view = 80    # [degrees]
+diagonal_field_of_view = 120   # [degrees]
+
+[physical_properties.lenses.4mm]
+aperture = 1.8                # [mm]
+focal_length = 3.8            # [mm]
+horizontal_field_of_view = 80 # [degrees]
+vertical_field_of_view = 52   # [degrees]
+diagonal_field_of_view = 91   # [degrees]
+
+[physical_properties.image_sensors]
+synced_shutter = true
+
+[physical_properties.image_sensors.left]
+pixel_size = 3.0 # [micrometers]
+resolution = [1920, 1200] # [pixels]
+format = [16, 10]
+global_shutter = true
+camera_controls = [
+    "resolution",
+    "framerate",
+    "white balance",
+    "exposure time",
+    "exposure range",
+    "sensor gain",
+    "digital gain",
+    "color_balance",
+    "denoising",
+]
+
+[physical_properties.image_sensors.right]
+pixel_size = 3.0 # [micrometers]
+resolution = [1920, 1200] # [pixels]
+format = [16, 10]
+global_shutter = true
+camera_controls = [
+    "resolution",
+    "framerate",
+    "white balance",
+    "exposure time",
+    "exposure range",
+    "sensor gain",
+    "digital gain",
+    "color_balance",
+    "denoising",
+]
+
+[connection]
+type = "Serial Coax GMSL2 connector - FAKRA Z type"
+power_delivery = "Power via GMSL2 (PoC)"
+
+[video_output]
+resolution_and_framerates = [
+    { resolution = [
+        1920,
+        1200,
+    ], framerates = [
+        60,
+        30,
+        15,
+    ] },
+    { resolution = [
+        1920,
+        1080,
+    ], framerates = [
+        60,
+        30,
+        15,
+    ] },
+    { resolution = [
+        960,
+        600,
+    ], framerates = [
+        120,
+        60,
+        30,
+        15,
+    ] },
+]
+recording_codecs = ["H.264", "H.265", "lossless"]
+
+[depth_perception]
+depth_range = [
+    { lens = 2.2, min_distance = 0.3, max_distance = 20 }, # 2.2 mm lens
+    { lens = 4.0, min_distance = 0.5, max_distance = 35 }, # 4.0 mm lens
+]
+depth_fps = [15, 30, 60, 120] # Supported depth frame rates
+
+[imu]
+data_rate = 400        # [Hz]
+pose_update_rate = 120 # [Hz]
+
+[imu.accelerometer]
+bit_count = 16
+max_acceleration = 12 # [g]
+
+[imu.gyroscope]
+bit_count = 16
+max_angular_velocity = 1000 # [degrees/s]
+
+[object_detection]
+available_types = [
+    "persons",
+    "vehicles",
+    "animals",
+    "vegetables",
+    "electronics",
+]
+custom_objects_supported = true
+tracking_supported = true
+detection_outputs = [
+    "3d_bounding_box",
+    "2d_bounding_box",
+    "3d_location",
+    "speed",
+    "unique_id",
+    "segmentation_mask",
+]
+
+max_detection_range_3d = 20 # [meters]
+max_detection_range_2d = 40 # [meters]
+skeleton_tracking_keypoint_count = [
+    18,
+    34,
+    38,
+] # Supported skeleton tracking keypoints
+max_skeleton_tracking_range = 15 # [meters]

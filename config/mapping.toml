@@ -1,11 +1,22 @@
-title = "Mapping Configuration"
+version = "1.0.0"
 
-[mapping]
-limit_distance = 5 # [meters]
+[devices]
+[devices.main_camera]
+name = "Stereolabs ZED X"
+lens = "2_2mm"
 
-[mapping.device]
-name = "Front Camera"
-manufacturer = "Stereolabs"
-model = "ZED X"
-serial_number = "1234567890"
-connection_type = "GSML"
+[devices.main_camera.vision]
+capture_resolution = [1920, 1080] # [pixels]
+capture_framerate = 60            # [fps]
+limit_perception_distance = 5     # [meters]
+limit_perception_angle = 100      # [degrees]
+
+[devices.main_camera.object_detection]
+detection_enabled = true
+tracking_enabled = true
+max_detection_range = 10                                            # [meters]
+objects = ["persons", "vehicles", "animals"]
+confidence_threshold = 0.7                                          # [0-1]
+detection_outputs = ["3d_bounding_box", "3d_location", "unique_id"]
+skeleton_tracking_enabled = true
+skeleton_tracking_keypoint_count = 18

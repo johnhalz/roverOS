@@ -1,0 +1,218 @@
+# Motor CAN Communication Configuration
+
+[can_interface]
+# Basic communication parameters
+baud_rate = 1000000       # 1 Mbps (common for motor controllers)
+frame_format = "standard" # "standard" (11-bit) or "extended" (29-bit)
+interface = "can0"        # CAN interface name (Linux socketcan)
+
+[bit_timing]
+# Bit timing parameters (optional - usually auto-calculated from baud_rate)
+time_quantum = 83   # nanoseconds for 1 Mbps
+sync_segment = 1    # always 1 TQ
+prop_segment = 2    # 1-8 TQ
+phase_segment1 = 3  # 1-8 TQ
+phase_segment2 = 2  # 1-8 TQ
+sample_point = 87.5 # percentage (75-87.5% typical)
+
+[motor_config]
+# Motor-specific parameters
+motor_id = 0x01                # Motor node ID (1-127 typical)
+device_name = "servo_motor"
+manufacturer = "MotorTech"
+motor_type = "brushless_servo"
+max_rpm = 3000
+rated_current = 5.0            # Amps
+rated_voltage = 24.0           # Volts
+
+[message_filtering]
+# Message acceptance filters for motor communication
+enable_filtering = true
+[[message_filtering.filters]]
+id = 0x180   # PDO1 TX (motor status)
+mask = 0x780 # Accept 0x180 + motor_id
+[[message_filtering.filters]]
+id = 0x280   # PDO2 TX (motor feedback)
+mask = 0x780
+[[message_filtering.filters]]
+id = 0x580   # SDO response
+mask = 0x780
+
+[buffers]
+# Buffer configuration
+tx_buffer_size = 16 # Number of transmit buffers
+rx_buffer_size = 32 # Number of receive buffers
+tx_timeout_ms = 100 # Transmit timeout
+rx_timeout_ms = 50  # Receive timeout
+
+[motor_commands]
+# Motor control commands
+[[motor_commands.outgoing]]
+name = "velocity_command"
+id = 0x200                # PDO1 RX (0x200 + motor_id)
+dlc = 4                   # 4 bytes for velocity setpoint
+data_format = "int32_le"  # 32-bit little-endian signed integer
+unit = "rpm"
+min_value = -3000
+max_value = 3000
+
+[[motor_commands.outgoing]]
+name = "position_command"
+id = 0x300                # PDO2 RX (0x300 + motor_id)
+dlc = 4                   # 4 bytes for position setpoint
+data_format = "int32_le"
+unit = "encoder_counts"
+min_value = -2147483648
+max_value = 2147483647
+
+[[motor_commands.outgoing]]
+name = "control_word"
+id = 0x220                # Control word command
+dlc = 2                   # 2 bytes for control word
+data_format = "uint16_le"
+
+# Motor feedback messages
+[[motor_commands.incoming]]
+name = "motor_status"
+id = 0x180 # PDO1 TX (0x180 + motor_id)
+dlc = 8
+required = true
+fields = [
+    { name = "actual_velocity", offset = 0, type = "int32_le", unit = "rpm" },
+    { name = "status_word", offset = 4, type = "uint16_le" },
+    { name = "temperature", offset = 6, type = "int16_le", unit = "celsius" },
+]
+
+[[motor_commands.incoming]]
+name = "position_feedback"
+id = 0x280 # PDO2 TX (0x280 + motor_id)
+dlc = 8
+required = true
+fields = [
+    { name = "actual_position", offset = 0, type = "int32_le", unit = "encoder_counts" },
+    { name = "following_error", offset = 4, type = "int32_le", unit = "encoder_counts" },
+]
+
+[protocol]
+# CANopen protocol for motor control
+type = "canopen"
+
+[protocol.canopen]
+# CANopen motor drive profile (CiA 402)
+device_profile = 402       # Motor drive profile
+vendor_id = 0x1234
+product_code = 0x9876
+revision = 0x010001
+serial_number = 0x87654321
+
+# SDO configuration
+sdo_timeout_ms = 1000
+sdo_retries = 3
+
+# Motor-specific object dictionary entries
+[[protocol.canopen.objects]]
+index = 0x6040
+sub_index = 0x00
+name = "control_word"
+data_type = "uint16"
+access = "rw"                                    # read-write
+description = "Motor control word for operation"
+
+[[protocol.canopen.objects]]
+index = 0x6041
+sub_index = 0x00
+name = "status_word"
+data_type = "uint16"
+access = "ro"                     # read-only
+description = "Motor status word"
+
+[[protocol.canopen.objects]]
+index = 0x607A
+sub_index = 0x00
+name = "target_position"
+data_type = "int32"
+access = "rw"
+unit = "encoder_counts"
+description = "Target position for positioning mode"
+
+[[protocol.canopen.objects]]
+index = 0x6064
+sub_index = 0x00
+name = "position_actual"
+data_type = "int32"
+access = "ro"
+unit = "encoder_counts"
+description = "Actual motor position"
+
+[[protocol.canopen.objects]]
+index = 0x60FF
+sub_index = 0x00
+name = "target_velocity"
+data_type = "int32"
+access = "rw"
+unit = "rpm"
+description = "Target velocity for velocity mode"
+
+[[protocol.canopen.objects]]
+index = 0x606C
+sub_index = 0x00
+name = "velocity_actual"
+data_type = "int32"
+access = "ro"
+unit = "rpm"
+description = "Actual motor velocity"
+
+[[protocol.canopen.objects]]
+index = 0x6071
+sub_index = 0x00
+name = "target_torque"
+data_type = "int16"
+access = "rw"
+unit = "per_mille"
+description = "Target torque as per mille of rated torque"
+
+[[protocol.canopen.objects]]
+index = 0x6077
+sub_index = 0x00
+name = "torque_actual"
+data_type = "int16"
+access = "ro"
+unit = "per_mille"
+description = "Actual motor torque"
+
+[motor_operation]
+# Motor operation modes and parameters
+operation_mode = "velocity"   # "position", "velocity", "torque", "homing"
+enable_on_startup = false
+auto_start = false
+emergency_stop_enabled = true
+
+# Control loop parameters
+[motor_operation.velocity_control]
+max_velocity = 3000  # rpm
+acceleration = 1000  # rpm/s
+deceleration = 1000  # rpm/s
+velocity_window = 50 # rpm tolerance
+
+[motor_operation.position_control]
+max_velocity = 1500           # rpm for positioning
+acceleration = 500            # rpm/s
+deceleration = 500            # rpm/s
+position_window = 100         # encoder counts tolerance
+following_error_window = 1000 # encoder counts max error
+
+[safety]
+# Safety and monitoring parameters
+enable_safe_torque_off = true
+motor_temperature_limit = 80  # Celsius
+current_limit = 6.0           # Amps (above rated)
+velocity_limit = 3500         # rpm (above max)
+following_error_limit = 5000  # encoder counts
+
+[diagnostics]
+# Diagnostic and monitoring settings
+enable_error_frames = true
+enable_statistics = true
+log_level = "info"                  # "debug", "info", "warn", "error"
+log_file = "/var/log/motor_can.log"
+heartbeat_interval_ms = 1000        # NMT heartbeat

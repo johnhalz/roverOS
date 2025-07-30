@@ -1,0 +1,36 @@
+name = "DirectDrive M1502E-111"
+manufacturer = "DirectDrive"
+model = "M1502E-111"
+serial_number = "1234567890"
+
+[physical_properties]
+outer_diameter = 144            # [mm]
+height = 48                     # [mm]
+weight = 1.86                   # [kg]
+min_operating_temperature = -20 # [Celsius]
+max_operating_temperature = 45  # [Celsius]
+
+[performance]
+unload_velocity = 210     # [rpm]
+max_unload_current = 0.85 # [A]
+rated_velocity = 95       # [rpm]
+rated_torque = 2          # [Nm]
+stall_torque = 10         # [Nm]
+max_stall_current = 17    # [A]
+min_voltage = 12          # [V]
+max_voltage = 36          # [V]
+
+[motor_constants]
+torque_constant = 1.3  # [Nm/A]
+velocity_constant = 10 # [rpm/V]
+rotor_inertia = 3140   # [kg/mm^2]
+torque_density = 5.5   # [Nm/kg]
+
+[mechanical]
+max_axial_load = 100  # [N]
+max_radial_load = 800 # [N]
+
+[connection]
+data = "ZH1.5-2pin connector"
+protocol = "CAN"
+power_delivery = "XT30 connector"

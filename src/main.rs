@@ -1,23 +1,25 @@
+mod mapping_config;
+
 use embassy_executor::Spawner;
 use embassy_time::{Duration, Timer};
 use log::{info, warn};
-use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize)]
-struct Quote {
-    content: String,
-    author: String,
-}
+use mapping_config::MappingConfig;
 
 #[embassy_executor::task]
 async fn network_task() {
+    let url =
+        "https://raw.githubusercontent.com/johnhalz/roverOS/refs/heads/main/config/mapping.toml";
+
     loop {
-        match fetch_quote().await {
-            Ok(quote) => {
-                info!("Quote: \"{}\" - {}", quote.content, quote.author);
+        match fetch_quote(&url).await {
+            Ok(config_text) => {
+                let mapping_config =
+                    MappingConfig::from_toml(&config_text).expect("Failed to parse mapping config");
+                info!("Config: {:?}", mapping_config);
             }
             Err(e) => {
-                warn!("Failed to fetch quote: {}", e);
+                warn!("Failed to fetch config: {}", e);
             }
         }
 
@@ -25,20 +27,18 @@ async fn network_task() {
     }
 }
 
-async fn fetch_quote() -> Result<Quote, Box<dyn std::error::Error>> {
+async fn fetch_quote(url: &str) -> Result<String, Box<dyn std::error::Error>> {
     // Use a blocking client in a separate thread to avoid runtime conflicts
-    let handle = std::thread::spawn(|| {
+    let url = url.to_string();
+    let handle = std::thread::spawn(move || {
         let client = reqwest::blocking::Client::builder()
             .timeout(std::time::Duration::from_secs(10))
             .build()?;
-        client
-            .get("https://api.quotable.io/random")
-            .send()?
-            .json::<Quote>()
+        client.get(&url).send()?.text()
     });
 
-    let quote = handle.join().map_err(|_| "Thread panicked")??;
-    Ok(quote)
+    let config_text = handle.join().map_err(|_| "Thread panicked")??;
+    Ok(config_text)
 }
 
 #[embassy_executor::main]

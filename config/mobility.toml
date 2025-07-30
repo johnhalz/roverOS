@@ -1,0 +1,28 @@
+version = "1.0.0"
+
+[body]
+max_speed = 0.5         # [m/s]
+max_acceleration = 0.2  # [m/s^2]
+min_turn_radius = 0.0   # [m]
+max_standup_speed = 0.2 # [m/s]
+max_roll_angle = 20     # [degrees]
+max_pitch_angle = 10    # [degrees]
+
+[motors]
+[motors.left_body_pitch]
+name = "DirectDrive M1502E-111"
+
+[motors.right_body_pitch]
+name = "DirectDrive M1502E-111"
+
+[motors.left_kneeling_joint]
+name = "DirectDrive M1502E-111"
+
+[motors.right_kneeling_joint]
+name = "DirectDrive M1502E-111"
+
+[motors.left_drive]
+name = "DirectDrive M1502E-111"
+
+[motors.right_drive]
+name = "DirectDrive M1502E-111"
